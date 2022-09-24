@@ -1,0 +1,5 @@
+releases:
+- name: sample-python-local-k8
+  chart: ./helm_local
+ # values:
+  installed: true
