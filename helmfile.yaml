@@ -1,5 +1,7 @@
 releases:
 - name: sample-python-local-k8
   chart: ./helm_local
- # values:
-  installed: true
+  values:
+  - image:
+      repository: {{ env "IMAGE" | quote }} # Read in a value from an environment variable that will OVERRIDE the value that is in values.yml (Helmchart). This will allow me to pull in GitHub Commit Hash and update image.repository in my CI/CD approach
+  installed: false
